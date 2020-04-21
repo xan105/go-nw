@@ -1,0 +1,44 @@
+{
+	"FixedFileInfo":
+	{
+		"FileVersion": {
+			"Major": 1,
+			"Minor": 0,
+			"Patch": 0,
+			"Build": 0
+		},
+		"ProductVersion": {
+			"Major": 1,
+			"Minor": 0,
+			"Patch": 0,
+			"Build": 0
+		},
+		"FileFlagsMask": "3f",
+		"FileFlags ": "00",
+		"FileOS": "040004",
+		"FileType": "01",
+		"FileSubType": "00"
+	},
+	"StringFileInfo":
+	{
+		"Comments": "",
+		"CompanyName": "Anthony Beaumont",
+		"FileDescription": "No Window ChainLoader",
+		"FileVersion": "1.0.0",
+		"InternalName": "nw",
+		"LegalCopyright": "Copyright 2020 Anthony Beaumont.",
+		"LegalTrademarks": "",
+		"OriginalFilename": "nw.exe",
+		"PrivateBuild": "",
+		"ProductName": "No Window ChainLoader",
+		"ProductVersion": "1.0.0",
+		"SpecialBuild": ""
+	},
+	"VarFileInfo":
+	{
+		"Translation": {
+			"LangID": "0409",
+			"CharsetID": "04B0"
+		}
+	}
+}

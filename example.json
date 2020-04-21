@@ -1,0 +1,9 @@
+{
+  "bin": "/path/to/exe",
+  "args": "",
+  "cwd": "./",
+  "fileCheck": [
+    {"sum": "sha256", "size": 0},
+    {"file": "/path/to/file", "sum": "sha256", "size": 0}
+  ]
+}
