@@ -28,5 +28,5 @@ config file:
 Build
 -----
 
-Golang >= go1.12.1
+Golang >= go1.12.1 <br/>
 Use `buildme.cmd`
