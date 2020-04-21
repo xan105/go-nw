@@ -18,7 +18,7 @@ config file:
   "args": "",
   "cwd": "./",
   "fileCheck": [
-    {"sum": "sha256", "size": 0}, //self (bin value)
+    {"sum": "sha256", "size": 0}, //self(bin_value)
     {"file": "/path/to/file", "sum": "sha256", "size": 0}
   ]
 }
@@ -28,5 +28,5 @@ config file:
 Build
 -----
 
->= go1.12.1
+Golang >= go1.12.1
 Use `buildme.cmd`
