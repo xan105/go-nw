@@ -66,6 +66,7 @@ func main(){
       Binary string `json:"bin"`
       Args   string `json:"args"`
       Cwd    string `json:"cwd"`
+      Show	 bool `json:"show"`
       FileCheck []File `json:"fileCheck"`
     }
     
@@ -111,7 +112,15 @@ func main(){
         cmd.Dir = filepath.Dir(binPath)
       }
 
-      cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+      if (config.Show == true ) {
+		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: false}
+		//Allow console output to be shown
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+      } else {
+		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
+      }
+      
       err := cmd.Start()
       if err != nil { log.Fatal(err) }
 
