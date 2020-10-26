@@ -58,7 +58,7 @@ func main(){
     
     type File struct {
       Filepath  string `json:"file"`
-      Sum   string `json:"sum256"`
+      Sum   string `json:"sum"`
       Size  int64 `json:"size"`
     }
     
@@ -91,15 +91,21 @@ func main(){
           } else {
             file = binPath
           }
+          log.Print(file)
+          
           stats, err := os.Stat(file)
           if err != nil { log.Fatal(err) }
           if os.IsNotExist(err) { log.Fatal(err) }
           
-          if (stats.Size() != config.FileCheck[i].Size ){ log.Fatal(err) }
+          if (stats.Size() != config.FileCheck[i].Size ){ 
+			log.Fatal("size mismatch") 
+          }
           
           sum, err := checkSum(file)
           if err != nil { log.Fatal(err) }
-          if ( sum != config.FileCheck[i].Sum ){ log.Fatal(err) }
+          if ( sum != config.FileCheck[i].Sum ){ 
+			log.Fatal("hash mismatch: ",sum, " :: ",config.FileCheck[i].Sum) 
+          }
           
         }
       }
