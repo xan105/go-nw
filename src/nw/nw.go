@@ -68,6 +68,7 @@ func main(){
       Cwd    string `json:"cwd"`
       Show	 bool `json:"show"`
       FileCheck []File `json:"fileCheck"`
+      Env []string `json:"env"`
     }
     
     b, _ := ioutil.ReadAll(jsonFile)
@@ -127,6 +128,10 @@ func main(){
 		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
       }
       
+      if (config.Env != nil && len(config.Env) > 0) {
+        cmd.Env = append(os.Environ(), config.Env...)
+      }
+
       err := cmd.Start()
       if err != nil { log.Fatal(err) }
 
